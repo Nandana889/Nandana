@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nandana K | Computer Science Engineer & Software Developer</title>
+    <meta name="description"
+        content="Portfolio of Nandana K, a Computer Science Engineer, software developer, and M.Tech student exploring cybersecurity and AI research.">
+    <meta property="og:title" content="Nandana K | Computer Science Engineer">
+    <meta property="og:description" content="Software development, cybersecurity and AI research portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --plum: #392B40;
+            --ivory: #F8F5F0;
+            --teal: #5B8C85;
+            --white: #ffffff;
+            --char: #29262D;
+            --gray: #E8E3DE;
+            --teal-d: #3F6E67;
+            --card-bg: #ffffff;
+            --header-bg: rgba(248, 245, 240, 0.88);
+            --sub-color: #514b57;
+            --shadow: 0 4px 20px rgba(57, 43, 64, 0.06);
+            --spotlight: rgba(91, 140, 133, 0.14);
+            --code-bg: #291F30;
+            --code-border: rgba(255, 255, 255, 0.12);
+            --input-bg: #463754;
+            --input-border: #6b5a73;
+        }
+
+        [data-theme="dark"] {
+            --ivory: #140E19;
+            --plum: #F2EEF5;
+            --teal: #6DB3A9;
+            --white: #1F1726;
+            --char: #EAE5ED;
+            --gray: #32253B;
+            --teal-d: #88CDC3;
+            --card-bg: #1F1726;
+            --header-bg: rgba(20, 14, 25, 0.88);
+            --sub-color: #C0B7C7;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            --spotlight: rgba(109, 179, 169, 0.18);
+            --code-bg: #0F0A13;
+            --code-border: rgba(255, 255, 255, 0.1);
+            --input-bg: #2A1F33;
+            --input-border: #4A3A57;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 76px;
+        }
+
+        body {
+            font: 16px/1.65 Inter, system-ui, sans-serif;
+            color: var(--char);
+            background: var(--ivory);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Space Grotesk', Inter, sans-serif;
+            color: var(--plum);
+            line-height: 1.15;
+            letter-spacing: -.02em;
+            transition: color 0.3s ease;
+        }
+
+        a {
+            color: var(--teal-d);
+            transition: color 0.2s ease;
+        }
+
+        .wrap {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 88px 0;
+            border-top: 1px solid var(--gray);
+            transition: border-color 0.3s ease;
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin-bottom: 12px;
+        }
+
+        .sub {
+            max-width: 60ch;
+            margin-bottom: 40px;
+            color: var(--sub-color);
+            transition: color 0.3s ease;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 3px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 20px;
+            border-radius: 8px;
+            font: 600 15px Inter, sans-serif;
+            text-decoration: none;
+            border: 1px solid var(--plum);
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn.p {
+            background: var(--plum);
+            color: var(--ivory);
+            border-color: var(--plum);
+        }
+
+        .btn.p:hover {
+            background: var(--teal-d);
+            border-color: var(--teal-d);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(91, 140, 133, 0.3);
+        }
+
+        .btn.s {
+            background: transparent;
+            color: var(--plum);
+            border-color: var(--gray);
+        }
+
+        .btn.s:hover {
+            border-color: var(--teal);
+            color: var(--teal-d);
+            transform: translateY(-2px);
+            background: rgba(91, 140, 133, 0.06);
+        }
+
+        .btn.t {
+            background: var(--teal);
+            border-color: var(--teal);
+            color: #fff;
+        }
+
+        .btn.t:hover {
+            background: var(--teal-d);
+            border-color: var(--teal-d);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(91, 140, 133, 0.3);
+        }
+
+        .btn.sm {
+            padding: 7px 14px;
+            font-size: 14px;
+        }
+
+        .card {
+            position: relative;
+            background: var(--card-bg);
+            border: 1px solid var(--gray);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+            border-color: var(--teal);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: var(--mouse-y, -150px);
+            left: var(--mouse-x, -150px);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--spotlight) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+            border-radius: 50%;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .g2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .g3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .g4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 11px;
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            font-size: 13.5px;
+            background: var(--ivory);
+            color: var(--char);
+            margin: 0 6px 6px 0;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+
+        .chip:hover {
+            border-color: var(--teal);
+            transform: translateY(-1px);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .done {
+            background: #dcebe8;
+            color: #2c5750;
+        }
+
+        [data-theme="dark"] .done {
+            background: #1e3b37;
+            color: #9fd0c8;
+        }
+
+        .ongoing {
+            background: #efe4d3;
+            color: #6b4a1c;
+        }
+
+        [data-theme="dark"] .ongoing {
+            background: #3b3224;
+            color: #e9c9a6;
+        }
+
+        ul.ticks {
+            list-style: none;
+        }
+
+        ul.ticks li {
+            padding-left: 22px;
+            position: relative;
+            margin: 6px 0;
+        }
+
+        ul.ticks li:before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: .62em;
+            width: 8px;
+            height: 8px;
+            border-radius: 2px;
+            background: var(--teal);
+        }
+
+        /* Nav Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--header-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+        }
+
+        .logo {
+            font: 700 20px 'Space Grotesk', sans-serif;
+            color: var(--plum);
+            text-decoration: none;
+            letter-spacing: .02em;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .links a:not(.btn) {
+            color: var(--plum);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            position: relative;
+            padding: 4px 0;
+        }
+
+        .links a:not(.btn)::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--teal);
+            transition: width 0.25s ease;
+        }
+
+        .links a:not(.btn):hover::after,
+        .links a:not(.btn).active::after {
+            width: 100%;
+        }
+
+        .links a:not(.btn).active {
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--gray);
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--plum);
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s, border-color 0.2s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--gray);
+            transform: rotate(15deg);
+        }
+
+        .theme-toggle svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .menu {
+            display: none;
+            background: none;
+            border: 1px solid var(--gray);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font: 600 14px Inter;
+            color: var(--plum);
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            border-top: 0;
+            padding: 72px 0 88px;
+        }
+
+        .hero .wrap {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 68px);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .role {
+            font: 600 20px 'Space Grotesk', sans-serif;
+            color: var(--teal-d);
+            margin-bottom: 20px;
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+        }
+
+        .cursor {
+            font-weight: 400;
+            color: var(--teal);
+            animation: blink 0.8s infinite;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .hero p.intro {
+            max-width: 56ch;
+            margin-bottom: 28px;
+            font-size: 17px;
+            color: var(--char);
+        }
+
+        .cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .hl {
+            display: grid;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .hl li {
+            padding: 10px 16px;
+            border-left: 3px solid var(--teal);
+            background: var(--card-bg);
+            border-radius: 0 8px 8px 0;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--plum);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .hl li:hover {
+            transform: translateX(4px);
+        }
+
+        /* Code Block */
+        .code {
+            background: var(--code-bg);
+            color: #efe9f2;
+            border-radius: 14px;
+            box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--code-border);
+            overflow: hidden;
+        }
+
+        .code .bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            background: rgba(0, 0, 0, 0.25);
+            border-bottom: 1px solid var(--code-border);
+        }
+
+        .code .dots {
+            display: flex;
+            gap: 7px;
+        }
+
+        .code .dots i {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+
+        .code .dots i:nth-child(1) {
+            background: #ff5f56;
+        }
+
+        .code .dots i:nth-child(2) {
+            background: #ffbd2e;
+        }
+
+        .code .dots i:nth-child(3) {
+            background: #27c93f;
+        }
+
+        .code .tabs {
+            display: flex;
+            gap: 4px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: #a596ad;
+            font: 500 13px 'Space Grotesk', sans-serif;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: color 0.2s, background 0.2s;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .copy-btn {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #d9cfdf;
+            font: 500 12px Inter, sans-serif;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: var(--teal);
+            color: #fff;
+        }
+
+        .code pre {
+            padding: 22px;
+            font: 14px/1.8 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            overflow-x: auto;
+            min-height: 200px;
+        }
+
+        .k {
+            color: #9fd0c8;
+        }
+
+        .s2 {
+            color: #e9c9a6;
+        }
+
+        .c {
+            color: #a596ad;
+        }
+
+        .n {
+            color: #f7b05b;
+        }
+
+        /* Timeline */
+        .tl {
+            border-left: 2px solid var(--gray);
+            margin-left: 6px;
+        }
+
+        .tl>div {
+            position: relative;
+            padding: 0 0 36px 28px;
+        }
+
+        .tl>div:before {
+            content: "";
+            position: absolute;
+            left: -7px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--teal);
+            border: 2px solid var(--ivory);
+            box-shadow: 0 0 0 3px var(--gray);
+        }
+
+        .tl .when {
+            font-size: 14px;
+            color: var(--sub-color);
+            margin-bottom: 2px;
+        }
+
+        .tl h3 {
+            font-size: 20px;
+        }
+
+        .meta {
+            font-size: 14.5px;
+            color: var(--sub-color);
+        }
+
+        /* Projects */
+        .project-filters {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .filter-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--gray);
+            color: var(--plum);
+            font: 600 14px Inter, sans-serif;
+            padding: 8px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--plum);
+            color: var(--ivory);
+            border-color: var(--plum);
+        }
+
+        .proj-hidden {
+            display: none !important;
+        }
+
+        .proj.feat {
+            grid-column: 1/-1;
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 28px;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .thumb {
+            background: var(--code-bg);
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+        }
+
+        .thumb svg {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .proj .body {
+            padding: 24px;
+        }
+
+        .feat .body {
+            padding: 28px 28px 28px 0;
+        }
+
+        .proj h3 {
+            font-size: 22px;
+            margin: 8px 0 4px;
+        }
+
+        .proj .lead {
+            color: var(--teal-d);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .proj .row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+
+        .proj:not(.feat) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Research Pipeline Flowchart */
+        .pipe-diagram {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            overflow-x: auto;
+            padding: 16px 4px;
+        }
+
+        .pipe-step {
+            flex: 1;
+            min-width: 165px;
+            background: var(--card-bg);
+            border: 1px solid var(--gray);
+            border-radius: 10px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pipe-step.active,
+        .pipe-step:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(91, 140, 133, 0.2);
+        }
+
+        .pipe-step .step-num {
+            font: 700 12px 'Space Grotesk', sans-serif;
+            color: var(--teal);
+            background: rgba(91, 140, 133, 0.12);
+            padding: 3px 8px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .pipe-step .step-title {
+            font: 600 14px Inter, sans-serif;
+            color: var(--plum);
+            display: block;
+        }
+
+        .pipe-arrow {
+            color: var(--teal);
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .pipe-detail-box {
+            margin-top: 16px;
+            padding: 14px 18px;
+            background: var(--card-bg);
+            border: 1px solid var(--gray);
+            border-left: 4px solid var(--teal);
+            border-radius: 0 8px 8px 0;
+            font-size: 14.5px;
+            color: var(--plum);
+            transition: all 0.3s ease;
+        }
+
+        .stat {
+            font: 700 36px 'Space Grotesk';
+            color: var(--plum);
+        }
+
+        .ach h3,
+        .cert h3,
+        .lead-c h3 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .pub {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Contact & Dark Section */
+        .dark {
+            background: #251b2c;
+            color: #F8F5F0;
+            border-top: 0;
+        }
+
+        .dark h2,
+        .dark h3 {
+            color: #F8F5F0;
+        }
+
+        .dark .sub {
+            color: #d9cfdf;
+        }
+
+        .dark a {
+            color: #9fd0c8;
+        }
+
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .clist {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .clist li {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        form {
+            display: grid;
+            gap: 14px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            margin-top: 4px;
+            padding: 11px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--input-border);
+            background: var(--input-bg);
+            color: var(--ivory);
+            font: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(91, 140, 133, 0.25);
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #a596ad;
+        }
+
+        #note {
+            font-size: 14px;
+            color: #d9cfdf;
+        }
+
+        footer {
+            background: #1a1220;
+            color: #F8F5F0;
+            border-top: 1px solid rgba(255, 255, 255, .14);
+            padding: 36px 0;
+            font-size: 14.5px;
+        }
+
+        footer .wrap {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        footer a {
+            color: #9fd0c8;
+            margin-right: 16px;
+        }
+
+        footer strong {
+            font: 700 18px 'Space Grotesk';
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--plum);
+            color: var(--ivory);
+            border: 1px solid var(--gray);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--teal);
+            color: #fff;
+            transform: translateY(-4px);
+        }
+
+        @media(max-width:900px) {
+
+            .hero .wrap,
+            .contact,
+            .pub,
+            .proj.feat {
+                grid-template-columns: 1fr;
+            }
+
+            .g3,
+            .g4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feat .body {
+                padding: 0 24px 24px;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+                padding: 20px 24px;
+                background: var(--header-bg);
+                border-bottom: 1px solid var(--gray);
+                backdrop-filter: blur(16px);
+            }
+
+            .links.open {
+                display: flex;
+            }
+        }
+
+        @media(max-width:600px) {
+
+            .g2,
+            .g3,
+            .g4 {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 64px 0;
+            }
+
+            .pipe-diagram {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .pipe-arrow {
+                text-align: center;
+                transform: rotate(90deg);
+                margin: -4px 0;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            .reveal {
+                transition: none !important;
+                scroll-behavior: auto !important;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="wrap" aria-label="Main">
+            <a class="logo" href="#home">NANDANA K.</a>
+            <div class="nav-right">
+                <button class="menu" id="menu" aria-expanded="false" aria-controls="links">Menu</button>
+            </div>
+            <ul class="links" id="links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a class="btn p sm"
+                        href="https://drive.google.com/file/d/1aR0GItKXdDudmQ3mUCp8BrRXDwgakUF8/view?usp=sharing"
+                        target="_blank" rel="noopener">Download Resume</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                        <svg id="themeIcon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-5.4-5.4c0-1.81.89-3.42 2.26-4.4C12.92 3.04 12.46 3 12 3z" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="wrap">
+                <div class="reveal">
+                    <h1>Hi, I'm Nandana K.</h1>
+                    <div class="role"><span id="typewriter"></span><span class="cursor">|</span></div>
+                    <p class="intro">I'm a Computer Science and Engineering graduate with honours, currently pursuing my
+                        M.Tech in Computer Science and Engineering. I build practical web applications and explore
+                        cybersecurity, artificial intelligence, and secure systems through projects and research.</p>
+                    <div class="cta">
+                        <a class="btn p" href="#projects">View My Projects</a>
+                        <a class="btn s"
+                            href="https://drive.google.com/file/d/1aR0GItKXdDudmQ3mUCp8BrRXDwgakUF8/view?usp=sharing"
+                            target="_blank" rel="noopener">Download Resume</a>
+                        <a class="btn s" href="#contact">Contact Me</a>
+                    </div>
+                    <ul class="hl">
+                        <li>Best Outgoing Student (UG), CSE Department</li>
+                        <li>First Rank Holder in Multiple Semesters</li>
+                        <li>IEEE Xplore Research Publication</li>
+                    </ul>
+                </div>
+                <div class="code reveal" aria-label="Interactive Code Preview">
+                    <div class="bar">
+                        <div class="dots"><i></i><i></i><i></i></div>
+                        <div class="tabs">
+                            <button class="tab-btn active" data-tab="js">nandana.js</button>
+                            <button class="tab-btn" data-tab="json">skills.json</button>
+                            <button class="tab-btn" data-tab="py">research.py</button>
+                        </div>
+                        <button class="copy-btn" id="copyCodeBtn" aria-label="Copy Code">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                            </svg>
+                            <span id="copyText">Copy</span>
+                        </button>
+                    </div>
+                    <pre id="codePre"><code><span class="c">// a quick look at what I build and explore</span>
+<span class="k">const</span> nandana = {
+  degree: <span class="s2">"B.E. CSE (Honours), CGPA 9.08"</span>,
+  studying: <span class="s2">"M.Tech CSE"</span>,
+  builds: [<span class="s2">"web applications"</span>, <span class="s2">"secure systems"</span>],
+  exploring: [<span class="s2">"cybersecurity"</span>, <span class="s2">"explainable AI"</span>],
+  published: <span class="k">true</span> <span class="c">// IEEE Xplore</span>
+};</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="wrap">
+                <h2 class="reveal">A Little About Me</h2>
+                <div class="grid g2 reveal" style="gap:48px;align-items:start;margin-top:28px">
+                    <div>
+                        <p style="margin-bottom:16px">I'm Nandana K, a Computer Science and Engineering graduate with
+                            honours and a strong academic foundation in computing and software development.</p>
+                        <p style="margin-bottom:16px">During my undergraduate studies, I secured first rank in multiple
+                            semesters and was recognized as the Best Outgoing Student (UG) of the CSE Department. I also
+                            served as Department Secretary and hosted departmental events as a Master of Ceremonies.</p>
+                        <p style="margin-bottom:16px">My interests span software development, cybersecurity, artificial
+                            intelligence, and full-stack development. Through academic projects, internships, and
+                            research, I have explored secure transaction systems, web applications, and AI-driven
+                            solutions.</p>
+                        <p>I'm looking forward to applying my technical knowledge, learning from experienced teams, and
+                            contributing to meaningful software projects.</p>
+                    </div>
+                    <div class="grid g2">
+                        <div class="card reveal">
+                            <div class="stat" id="statCgpa" data-count="9.08">0.00</div>
+                            <p class="meta">CGPA out of 10</p>
+                        </div>
+                        <div class="card reveal">
+                            <h3 style="font-size:19px">B.E. CSE with Honours</h3>
+                            <p class="meta">JCT College of Engineering and Technology</p>
+                        </div>
+                        <div class="card reveal">
+                            <h3 style="font-size:19px">M.Tech CSE</h3>
+                            <p class="meta">Currently pursuing at Amrita Vishwa Vidyapeetham</p>
+                        </div>
+                        <div class="card reveal">
+                            <h3 style="font-size:19px">Interests</h3>
+                            <p class="meta">Software development &amp; cybersecurity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="wrap">
+                <h2 class="reveal">Technical Skills</h2>
+                <p class="sub reveal">Technologies and tools I work with.</p>
+                <div class="grid g3">
+                    <div class="card reveal">
+                        <h3>Programming Languages</h3>
+                        <p style="margin-top:12px">
+                            <span class="chip">Python</span>
+                            <span class="chip">Java</span>
+                        </p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Frontend Development</h3>
+                        <p style="margin-top:12px">
+                            <span class="chip">HTML5</span>
+                            <span class="chip">CSS3</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">React</span>
+                        </p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Backend Development</h3>
+                        <p style="margin-top:12px">
+                            <span class="chip">Node.js</span>
+                            <span class="chip">Express.js</span>
+                            <span class="chip">MongoDB</span>
+                        </p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Cybersecurity</h3>
+                        <p style="margin-top:12px">
+                            <span class="chip">Cybersecurity Fundamentals</span>
+                            <span class="chip">Cybersecurity &amp; Privacy</span>
+                            <span class="chip">JWT Auth</span>
+                            <span class="chip">Encryption</span>
+                            <span class="chip">Tokenization</span>
+                        </p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>AI and Research</h3>
+                        <p style="margin-top:12px">
+                            <span class="chip">Explainable AI</span>
+                            <span class="chip">Computer Vision</span>
+                            <span class="chip">Deep Learning</span>
+                            <span class="chip">Freshness Classification</span>
+                        </p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Tools &amp; Environment</h3>
+                        <p style="margin-top:12px">
+                            <span class="chip">Git</span>
+                            <span class="chip">GitHub</span>
+                            <span class="chip">VS Code</span>
+                            <span class="chip">Jupyter Notebook</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="wrap">
+                <h2 class="reveal">Selected Projects</h2>
+                <p class="sub reveal">A selection of projects spanning full-stack development, secure systems, and AI
+                    research.</p>
+
+                <div class="project-filters reveal">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                    <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
+                    <button class="filter-btn" data-filter="ai">AI &amp; Research</button>
+                </div>
+
+                <div class="grid g2" id="projectGrid">
+                    <article class="card proj feat reveal" data-category="fullstack cybersecurity">
+                        <div class="thumb" aria-hidden="true">
+                            <svg viewBox="0 0 300 150" fill="none" stroke="#6DB3A9" stroke-width="2">
+                                <rect x="10" y="40" width="70" height="70" rx="8" />
+                                <rect x="220" y="40" width="70" height="70" rx="8" />
+                                <circle cx="45" cy="75" r="12" />
+                                <circle cx="255" cy="75" r="12" />
+                                <path d="M80 75h55m30 0h55" stroke-dasharray="4 5" />
+                                <rect x="135" y="50" width="30" height="50" rx="6" fill="#5B8C85" stroke="none" />
+                                <path d="M143 72v-6a7 7 0 0 1 14 0v6" stroke="#392B40" />
+                                <rect x="141" y="72" width="18" height="14" rx="3" fill="#392B40" stroke="none" />
+                            </svg>
+                        </div>
+                        <div class="body">
+                            <span class="badge done">Completed Undergraduate Project</span>
+                            <h3>Trust Chain Escrow</h3>
+                            <p class="lead">A Dual-Key Verification System for Import-Export Transactions.</p>
+                            <p>A full-stack escrow platform for import-export transactions using dual-key verification
+                                and milestone-based payment workflows.</p>
+                            <p style="margin-top:12px"><span class="chip">React</span><span
+                                    class="chip">Node.js</span><span class="chip">Express.js</span><span
+                                    class="chip">MongoDB</span><span class="chip">JWT</span></p>
+                            <ul class="ticks" style="margin-top:8px">
+                                <li>JWT-based authentication</li>
+                                <li>KYC verification workflow</li>
+                                <li>Milestone-based payment workflow</li>
+                                <li>Transaction history and audit logging</li>
+                                <li>Dispute-resolution workflow</li>
+                            </ul>
+                            <div class="row"><a class="btn p sm"
+                                    href="https://github.com/Nandana889/trust-chain-escrow.git" target="_blank"
+                                    rel="noopener">GitHub Repository</a></div>
+                        </div>
+                    </article>
+                    <article class="card proj reveal" data-category="fullstack">
+                        <div><span class="badge ongoing">Ongoing</span></div>
+                        <h3>Withlove_keats</h3>
+                        <p class="lead">Personalized Gifts E-Commerce Website</p>
+                        <p>An ongoing React-based e-commerce website project focused on creating an elegant and
+                            user-friendly platform for personalized gifts.</p>
+                        <p style="margin-top:12px"><span class="chip">React</span><span
+                                class="chip">JavaScript</span><span class="chip">HTML</span><span
+                                class="chip">CSS</span></p>
+                        <p class="meta" style="margin:6px 0 4px"><strong>Current work</strong></p>
+                        <ul class="ticks">
+                            <li>Website UI development</li>
+                            <li>Logo and banner design</li>
+                            <li>Product image preparation</li>
+                            <li>E-commerce interface</li>
+                        </ul>
+                    </article>
+                    <article class="card proj reveal" data-category="ai">
+                        <div><span class="badge ongoing">Ongoing Research</span></div>
+                        <h3>Explainable Agentic AI for Vegetable Freshness</h3>
+                        <p>An ongoing research project exploring explainable and agentic AI for vegetable freshness
+                            classification, shelf-life prediction, and sustainable retail inventory decision-making.</p>
+                        <p style="margin-top:12px"><span class="chip">Explainable AI</span><span class="chip">Agentic
+                                AI</span><span class="chip">Freshness Classification</span><span class="chip">Shelf-Life
+                                Prediction</span><span class="chip">Sustainable Inventory Decisions</span></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="wrap">
+                <h2 class="reveal">Experience</h2>
+                <p class="sub reveal">Internship experience spanning software development, digital records, and
+                    cybercrime-related workflows.</p>
+                <div class="tl">
+                    <div class="reveal">
+                        <p class="when">March 24 – April 7, 2026 · On-site, 15 days</p>
+                        <h3>Police Station Internship</h3>
+                        <p class="meta" style="margin-bottom:8px">D4 Kuniyamuthur Law &amp; Order Police Station,
+                            Coimbatore City</p>
+                        <p style="max-width:65ch">Completed a 15-day internship gaining exposure to police operations,
+                            digital record management, and cybercrime-related workflows.</p>
+                        <ul class="ticks" style="margin-top:8px">
+                            <li>Cybercrime investigation workflows</li>
+                            <li>National Cyber Crime Reporting Portal</li>
+                            <li>Crime and Criminal Tracking Network &amp; Systems</li>
+                            <li>Police documentation and digital records</li>
+                        </ul>
+                    </div>
+                    <div class="reveal">
+                        <p class="when">August – September 2025</p>
+                        <h3>Python Development Internship</h3>
+                        <p class="meta" style="margin-bottom:8px">Codsoft · Python Intern</p>
+                        <p style="max-width:65ch">Completed a Python development internship involving programming
+                            practice and software development tasks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements">
+            <div class="wrap">
+                <h2 class="reveal">Achievements &amp; Recognition</h2>
+                <p class="sub reveal">Academic, research, and leadership milestones.</p>
+                <div class="grid g4 ach">
+                    <div class="card reveal">
+                        <h3>Best Outgoing Student (UG)</h3>
+                        <p class="meta">Recognized as the Best Outgoing Student (UG) of the CSE Department.</p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Academic Excellence</h3>
+                        <p class="meta">Secured first rank in multiple semesters during undergraduate studies.</p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>IEEE Xplore Publication</h3>
+                        <p class="meta">Research paper published on IEEE Xplore.</p>
+                        <p style="margin-top:12px"><a class="btn t sm"
+                                href="https://ieeexplore.ieee.org/document/11597641" target="_blank" rel="noopener">View
+                                Publication</a></p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Department Secretary</h3>
+                        <p class="meta">Served as Secretary of the CSE Department.</p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Master of Ceremonies</h3>
+                        <p class="meta">Hosted departmental events and programs.</p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>District-Level Bronze Medal</h3>
+                        <p class="meta">Won a bronze medal in a district-level Karate competition.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <div class="wrap">
+                <h2 class="reveal">Research &amp; Publications</h2>
+                <p class="sub reveal">One published paper and one ongoing M.Tech research project.</p>
+                <div class="pub">
+                    <div class="card reveal">
+                        <span class="badge done">Published</span>
+                        <h3 style="margin:10px 0 6px;font-size:21px">IEEE Xplore Publication</h3>
+                        <p class="meta" style="margin-bottom:8px">Peer-reviewed Research Publication.</p>
+                        <p>Published research paper available on IEEE Xplore.</p>
+                        <p style="margin-top:16px"><a class="btn t sm"
+                                href="https://ieeexplore.ieee.org/document/11597641" target="_blank" rel="noopener">Read
+                                Publication</a></p>
+                    </div>
+                    <div class="card reveal">
+                        <span class="badge ongoing">Ongoing Research</span>
+                        <h3 style="margin:10px 0 6px;font-size:21px">Explainable Agentic AI Framework for Vegetable
+                            Freshness</h3>
+                        <p class="meta" style="margin-bottom:8px">Classification, shelf-life prediction, and sustainable
+                            retail inventory decision-making.</p>
+                        <p>My ongoing M.Tech research explores explainable and agentic AI approaches to vegetable
+                            freshness classification, shelf-life prediction, and sustainable retail inventory
+                            decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="wrap">
+                <h2 class="reveal">Education</h2>
+                <p class="sub reveal">Academic path and results.</p>
+                <div class="tl">
+                    <div class="reveal">
+                        <p class="when">Currently pursuing</p>
+                        <h3>M.Tech in Computer Science and Engineering</h3>
+                        <p class="meta">Amrita Vishwa Vidyapeetham, Coimbatore</p>
+                    </div>
+                    <div class="reveal">
+                        <p class="when">Graduated 2026 · CGPA 9.08/10</p>
+                        <h3>B.E. in Computer Science and Engineering with Honours</h3>
+                        <p class="meta" style="margin-bottom:8px">JCT College of Engineering and Technology</p>
+                        <ul class="ticks">
+                            <li>Best Outgoing Student (UG), CSE Department</li>
+                            <li>First Rank Holder in Multiple Semesters</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <div class="wrap">
+                <h2 class="reveal">Certifications</h2>
+                <p class="sub reveal">Relevant certifications and professional learning.</p>
+                <div class="grid g3 cert">
+                    <div class="card reveal">
+                        <h3>Cloud Computing</h3>
+                        <p class="meta">Elite Certificate · NPTEL · May 2025</p>
+                        <p style="margin-top:12px"><a class="btn s sm"
+                                href="https://drive.google.com/file/d/1AQ2MQZATx72rKixH7AGJqokr1_rOt7Ta/view?usp=sharing"
+                                target="_blank" rel="noopener">View Certificate</a></p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Cyber Security and Privacy</h3>
+                        <p class="meta">NPTEL</p>
+                        <p style="margin-top:12px"><a class="btn s sm"
+                                href="https://drive.google.com/file/d/1BXuKJir7wZoeIDyu7VcKR99rFraz7o7n/view?usp=sharing"
+                                target="_blank" rel="noopener">View Certificate</a></p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>The Joy of Computing Using Python</h3>
+                        <p class="meta">NPTEL</p>
+                        <p style="margin-top:12px"><a class="btn s sm"
+                                href="https://drive.google.com/file/d/1gTYe8R75SQ1SFFUXnXffI3Afph6NMi/view?usp=sharing"
+                                target="_blank" rel="noopener">View Certificate</a></p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Cyber Security Essentials</h3>
+                        <p class="meta">Cisco Networking Academy</p>
+                        <p style="margin-top:12px"><a class="btn s sm"
+                                href="https://drive.google.com/file/d/1dPYllEN025gDh-bJdS9QE6Ktgx_8roqi/view?usp=sharing"
+                                target="_blank" rel="noopener">View Certificate</a></p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Cyber Security Training</h3>
+                        <p class="meta">ICT Academy</p>
+                        <p style="margin-top:12px"><a class="btn s sm"
+                                href="https://drive.google.com/file/d/1M6Z0zmjHHsFQ1hDd7Z31_w4lFp_B0_bi/view?usp=sharing"
+                                target="_blank" rel="noopener">View Certificate</a></p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Cybersecurity Course</h3>
+                        <p class="meta">Novitech R&amp;D</p>
+                        <p style="margin-top:12px"><a class="btn s sm"
+                                href="https://drive.google.com/file/d/1ug_K-BSIupEZ-abyVQ1ICeYo5RcjhdV/view?usp=sharing"
+                                target="_blank" rel="noopener">View Certificate</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="leadership">
+            <div class="wrap">
+                <h2 class="reveal">Leadership &amp; Activities</h2>
+                <p class="sub reveal">Coordination, communication, and community involvement.</p>
+                <div class="grid g3 lead-c">
+                    <div class="card reveal">
+                        <h3>Department Secretary</h3>
+                        <p class="meta">Served as Secretary of the Computer Science and Engineering Department,
+                            contributing to departmental activities and coordination.</p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Master of Ceremonies</h3>
+                        <p class="meta">Hosted departmental events and programs, developing public speaking,
+                            communication, and event coordination skills.</p>
+                    </div>
+                    <div class="card reveal">
+                        <h3>Compassion in Action Project</h3>
+                        <p class="meta" style="margin-bottom:6px">Team Thanal: "A Lifetime to Tell, A Moment to Listen."
+                        </p>
+                        <p class="meta">Participated in a community engagement initiative involving a visit to an
+                            old-age home, focused on meaningful conversations, companionship, and social connection.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dark" id="contact">
+            <div class="wrap contact">
+                <div class="reveal">
+                    <h2>Let's Connect</h2>
+                    <p class="sub">I'm interested in opportunities in software development, cybersecurity, and AI
+                        research. Feel free to connect to discuss projects, internships, or professional opportunities.
+                    </p>
+                    <ul class="clist">
+                        <li>Email: <a href="mailto:nandanak2343@gmail.com">nandanak2343@gmail.com</a></li>
+                        <li>Phone: <a href="tel:9566702343">+91 9566702343</a></li>
+                        <li>GitHub: <a href="https://github.com/Nandana889" target="_blank"
+                                rel="noopener">github.com/Nandana889</a></li>
+                    </ul>
+                    <a class="btn t"
+                        href="https://drive.google.com/file/d/1aR0GItKXdDudmQ3mUCp8BrRXDwgakUF8/view?usp=sharing"
+                        target="_blank" rel="noopener">Download Resume</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div><strong>Nandana K.</strong><br>Computer Science Engineer | Software Developer | Research Enthusiast
+            </div>
+            <div><a href="https://github.com/Nandana889" target="_blank" rel="noopener">GitHub</a><a
+                    href="mailto:nandanak2343@gmail.com">Email</a><br><span style="opacity:.8">&copy; 2026 Nandana K.
+                    All rights reserved.</span></div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+    <script>
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu');
+        const linksUl = document.getElementById('links');
+        menuBtn.addEventListener('click', () => {
+            const open = linksUl.classList.toggle('open');
+            menuBtn.setAttribute('aria-expanded', open);
+        });
+        linksUl.addEventListener('click', e => {
+            if (e.target.tagName === 'A') {
+                linksUl.classList.remove('open');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // 2. Dark / Light Theme Toggle
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const sunPath = "M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zM7.05 16.95l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0zM18.36 5.64l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0z";
+        const moonPath = "M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-5.4-5.4c0-1.81.89-3.42 2.26-4.4C12.92 3.04 12.46 3 12 3z";
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeIcon.innerHTML = `<path d="${sunPath}"/>`;
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                themeIcon.innerHTML = `<path d="${moonPath}"/>`;
+            }
+            localStorage.setItem('nandana_theme', theme);
+        }
+
+        const savedTheme = localStorage.getItem('nandana_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        setTheme(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        // 3. Typewriter Effect for Roles
+        const roles = [
+            "Computer Science Engineer",
+            "Software Developer",
+            "Cybersecurity Researcher",
+            "AI & Vision Enthusiast"
+        ];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterEl = document.getElementById('typewriter');
+
+        function typeLoop() {
+            const currentRole = roles[roleIndex];
+            if (isDeleting) {
+                typewriterEl.textContent = currentRole.substring(0, charIndex--);
+            } else {
+                typewriterEl.textContent = currentRole.substring(0, charIndex++);
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentRole.length + 1) {
+                typeSpeed = 2000; // Pause at full word
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 400; // Pause before typing next word
+            }
+
+            setTimeout(typeLoop, typeSpeed);
+        }
+        typeLoop();
+
+        // 4. Interactive Code Editor Tabs & Copy Button
+        const codeSnippets = {
+            js: `<span class="c">// a quick look at what I build and explore</span>
+<span class="k">const</span> nandana = {
+  degree: <span class="s2">"B.E. CSE (Honours), CGPA 9.08"</span>,
+  studying: <span class="s2">"M.Tech CSE"</span>,
+  builds: [<span class="s2">"web applications"</span>, <span class="s2">"secure systems"</span>],
+  exploring: [<span class="s2">"cybersecurity"</span>, <span class="s2">"explainable AI"</span>],
+  published: <span class="k">true</span> <span class="c">// IEEE Xplore</span>
+};`,
+            json: `{
+  <span class="k">"developer"</span>: <span class="s2">"Nandana K"</span>,
+  <span class="k">"skills"</span>: [<span class="s2">"Python"</span>, <span class="s2">"React"</span>, <span class="s2">"Node.js"</span>, <span class="s2">"MongoDB"</span>],
+  <span class="k">"cybersecurity"</span>: [<span class="s2">"JWT"</span>, <span class="s2">"Encryption"</span>, <span class="s2">"Digital Forensic Workflows"</span>],
+  <span class="k">"honours"</span>: <span class="s2">"Best Outgoing Student (UG), CSE"</span>
+}`,
+            py: `<span class="c"># Vegetable Freshness & Shelf-Life AI Model</span>
+<span class="k">import</span> torch
+<span class="k">from</span> model <span class="k">import</span> ExplainableVisionTransformer
+
+<span class="k">def</span> <span class="s2">predict_freshness</span>(image_tensor):
+    model = ExplainableVisionTransformer(pretrained=<span class="k">True</span>)
+    grade, confidence, gradcam_map = model.analyze(image_tensor)
+    <span class="k">return</span> {<span class="s2">"grade"</span>: grade, <span class="s2">"shelf_life_days"</span>: <span class="n">4</span>}
+`
+        };
+
+        const codePre = document.getElementById('codePre');
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        let currentTab = 'js';
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentTab = btn.getAttribute('data-tab');
+                codePre.querySelector('code').innerHTML = codeSnippets[currentTab];
+            });
+        });
+
+        const copyCodeBtn = document.getElementById('copyCodeBtn');
+        const copyText = document.getElementById('copyText');
+        copyCodeBtn.addEventListener('click', () => {
+            const rawText = codePre.textContent;
+            navigator.clipboard.writeText(rawText).then(() => {
+                copyText.textContent = "Copied!";
+                setTimeout(() => copyText.textContent = "Copy", 2000);
+            });
+        });
+
+        // 5. Spotlight Mouse Effect on Cards
+        document.addEventListener('mousemove', e => {
+            document.querySelectorAll('.card').forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // 6. Scroll Reveal Observer & Counter Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Animate stat counters inside revealed entry
+                    const statEl = entry.target.querySelector('#statCgpa');
+                    if (statEl && !statEl.classList.contains('counted')) {
+                        statEl.classList.add('counted');
+                        let count = 0;
+                        const target = 9.08;
+                        const interval = setInterval(() => {
+                            count += 0.15;
+                            if (count >= target) {
+                                count = target;
+                                clearInterval(interval);
+                            }
+                            statEl.textContent = count.toFixed(2);
+                        }, 25);
+                    }
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 7. Project Category Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projCards = document.querySelectorAll('#projectGrid article');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+
+                projCards.forEach(card => {
+                    const cats = card.getAttribute('data-category') || '';
+                    if (filter === 'all' || cats.includes(filter)) {
+                        card.classList.remove('proj-hidden');
+                    } else {
+                        card.classList.add('proj-hidden');
+                    }
+                });
+            });
+        });
+
+        // 9. Scrollspy Nav Link Highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.links a[href^="#"]');
+
+        window.addEventListener('scroll', () => {
+            let currentSec = '';
+            sections.forEach(sec => {
+                const secTop = sec.offsetTop - 100;
+                if (window.scrollY >= secTop) {
+                    currentSec = sec.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSec}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Back to top button visibility
+            const backToTopBtn = document.getElementById('backToTop');
+            if (window.scrollY > 350) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // 10. Back to top action
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>
